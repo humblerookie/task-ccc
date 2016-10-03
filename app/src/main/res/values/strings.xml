@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- fonts -->
+    <string name="font.bold.italic">fonts/Europa-BoldItalic.otf</string>
+    <string name="font.regular">fonts/Europa-Regular.otf</string>
+    <string name="font.bold">fonts/Europa-Bold.otf</string>
+    <string name="font.thin">fonts/Europa-Light.otf</string>
+
+    <string name="app_name">Crafts CC</string>
+    <string name="text_shop_by_department">Shop by department</string>
+    <string name="text_search_hint">Search for products</string>
+    <string name="text_delivery_location">Delivery location</string>
+    <string name="text_place_order">Place Order</string>
+    <string name="text_product_title">Potato Chips - American Style</string>
+    <string name="text_product_sku">112gm</string>
+    <string name="text_product_price">₹20</string>
+    <string name="text_cart_layout_title">Items In your cart</string>
+    <string name="text_shop_for">Shop for</string>
+    <string name="text_recently_viewed">Recently Viewed</string>
+    <string name="text_frequently_viewed">Frequently Viewed</string>
+    <string name="text_categories">Categories</string>
+    <string name="text_sub_categories">Sub Categories</string>
+    <string name="search_text">Search</string>
+    <string name="text_sort">Sort</string>
+    <string name="text_filter">Filter</string>
+    <string name="text_select_sku">Select Pack Size</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="speech_prompt">Say Something to Search</string>
+    <string name="speech_no_support">Voice input is not supported on your device</string>
+    <string name="text_order">Order</string>
+    <string name="text_delivery_details">Your delivery details</string>
+    <string name="text_hint_notes">Any packaging instructions? Want anything extra? Please add it
+        here…
+    </string>
+    <string name="text_items">Items</string>
+    <string name="text_view_more_items">View More Items</string>
+    <string name="text_total">Total</string>
+    <string name="text_store">Store</string>
+    <string name="text_notes">Special Instructions / Notes</string>
+    <string name="error.common.no_internet">Please check your network connection and try again!</string>
+    <string name="text_add_address">Add Address</string>
+    <string name="text_delivery_area">Delivery Area</string>
+    <string name="text_selected_area">Lokhandwala, Andheri West</string>
+    <string name="text_is_deliverable">This store delivers to the selected location</string>
+    <string name="text_delivery_address">Delivery Address</string>
+    <string name="hint_add_address">e.g. flat number, society name, street name, landmark</string>
+    <string name="text_change">Change</string>
+    <string name="text_select_address">Select an Address</string>
+    <string name="text_phone_number">Phone Number</string>
+    <string name="text_user_name">User Name</string>
+    <string name="text_verify_number">Verify Number</string>
+    <string name="text_link_phone_number">Please link a phone number with your account.</string>
+    <string name="text_country_code">+91</string>
+    <string name="text_verify">Verify</string>
+    <string name="text_send_code">We will send you a code via SMS to verify this number.</string>
+    <string name="place_holder_price">₹435</string>
+    <string name="place_holder_total_items">12</string>
+    <string name="place_holder_store_name">Royal Stores</string>
+    <string name="title_activity_storefront">StorefrontActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title.price_placeholder">₹ %1$s</string>
+    <string name="title.discount_placeholder">%1$s %</string>
+
+    <string-array name="item_types">
+        <item>Trending</item>
+        <item>Prescription</item>
+        <item>Over the counter</item>
+        <item>Nutrition</item>
+        <item>Hygiene</item>
+    </string-array>
+</resources>

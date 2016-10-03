@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black">@android:color/black</color>
+    <color name="black_40">#99000000</color>
+    <color name="black_20">#66000000</color>
+
+    <color name="white">@android:color/white</color>
+    <color name="white_40">#99FFFFFF</color>
+    <color name="white_20">#66FFFFFF</color>
+
+
+    <color name="black_overlay">#7A000000</color>
+
+    <color name="zugubee_yellow">#ffbd32</color>
+    <color name="zugubee_green">#6eb81c</color>
+    <color name="cart_green">@color/zugubee_green</color>
+    <color name="header_title_color">#494848</color>
+    <color name="text_gray">#4D2E2E2C</color>
+    <color name="bg_gray">#F8F8F8</color>
+    <color name="search_hint_gray">#979898</color>
+    <color name="divider">#1A979797</color>
+    <color name="category_title_color">#686666</color>
+    <color name="bg_category_grid">#D0CFCF</color>
+    <color name="cart_item_title_color">#e5000000</color>
+    <color name="item_sku_color">#66000000</color>
+    <color name="cart_item_price_color">#f6ad15</color>
+    <color name="item_incr_decr_quantity_color">#999999</color>
+    <color name="cart_layout_title_color">#494848</color>
+    <color name="item_quantity_color">#191919</color>
+    <color name="cart_layout_status_bar_color">#191919</color>
+    <color name="cart_header_title_color">#cc080808</color>
+    <color name="shop_for_color">#7e7d7d</color>
+    <color name="text_search_color">#494848</color>
+    <color name="text_category_color">#80000000</color>
+    <color name="sort_filter_text_color">#2E2E2E</color>
+    <color name="select_sku_header_color">#2E2E2E</color>
+    <color name="product_item_title_color">#e5000000</color>
+    <color name="product_list_header_color">#494848</color>
+    <color name="notes_hint_color">#4D2E2E2C</color>
+    <color name="light_gray">#EAEAEA</color>
+</resources>
