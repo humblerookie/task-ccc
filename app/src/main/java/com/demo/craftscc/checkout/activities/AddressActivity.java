@@ -1,6 +1,7 @@
 package com.demo.craftscc.checkout.activities;
 
 import android.app.ProgressDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
@@ -55,6 +56,9 @@ public class AddressActivity extends BaseActivity implements AddressView {
         progressDialog.setCancelable(false);
         progressDialog.setCanceledOnTouchOutside(false);
         setSupportActionBar(toolbar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            toolbar.setElevation(getResources().getDimension(R.dimen.spacing_normal));
+        }
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
