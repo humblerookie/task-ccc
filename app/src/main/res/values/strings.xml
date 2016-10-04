@@ -6,24 +6,17 @@
     <string name="font.bold">fonts/Europa-Bold.otf</string>
     <string name="font.thin">fonts/Europa-Light.otf</string>
 
-    <string name="app_name">Crafts CC</string>
+    <string name="app_name">Online Drugstore</string>
     <string name="text_shop_by_department">Shop by department</string>
     <string name="text_search_hint">Search for products</string>
     <string name="text_delivery_location">Delivery location</string>
     <string name="text_place_order">Place Order</string>
-    <string name="text_product_title">Potato Chips - American Style</string>
-    <string name="text_product_sku">112gm</string>
-    <string name="text_product_price">₹20</string>
     <string name="text_cart_layout_title">Items In your cart</string>
-    <string name="text_shop_for">Shop for</string>
-    <string name="text_recently_viewed">Recently Viewed</string>
-    <string name="text_frequently_viewed">Frequently Viewed</string>
     <string name="text_categories">Categories</string>
     <string name="text_sub_categories">Sub Categories</string>
     <string name="search_text">Search</string>
     <string name="text_sort">Sort</string>
     <string name="text_filter">Filter</string>
-    <string name="text_select_sku">Select Pack Size</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -41,8 +34,6 @@
     <string name="text_notes">Special Instructions / Notes</string>
     <string name="error.common.no_internet">Please check your network connection and try again!</string>
     <string name="text_add_address">Add Address</string>
-    <string name="text_delivery_area">Delivery Area</string>
-    <string name="text_selected_area">Lokhandwala, Andheri West</string>
     <string name="text_is_deliverable">This store delivers to the selected location</string>
     <string name="text_delivery_address">Delivery Address</string>
     <string name="hint_add_address">e.g. flat number, society name, street name, landmark</string>
