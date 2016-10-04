@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/spacing_normal"
+    app:cardCornerRadius="@dimen/spacing_tiny">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_small">
+
+        <LinearLayout
+            android:id="@+id/part1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/spacing_extra_large">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/icon_small"
+                android:layout_height="@dimen/icon_small"
+                android:layout_marginRight="@dimen/spacing_small" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.demo.craftscc.core.widgets.TextViewPlus
+                    android:id="@+id/drug_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_normal"
+                    app:customFont="@string/font.bold"
+                    tools:text="Yolo stuff" />
+
+                <com.demo.craftscc.core.widgets.TextViewPlus
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_small"
+                    app:customFont="@string/font.thin"
+                    tools:text="Yolo stuff" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/part2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/part1"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.demo.craftscc.core.widgets.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cart.title.quantity"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                app:customFont="@string/font.bold" />
+
+            <com.demo.craftscc.core.widgets.TextViewPlus
+                android:id="@+id/reduce_qty"
+                android:layout_width="@dimen/spacing_extra_large"
+                android:layout_height="@dimen/spacing_extra_large"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:background="@drawable/circle_patch"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/white"
+                app:customFont="@string/font.regular" />
+
+            <com.demo.craftscc.core.widgets.TextViewPlus
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/black_40"
+                app:customFont="@string/font.bold"
+                tools:text="24" />
+
+            <com.demo.craftscc.core.widgets.TextViewPlus
+                android:id="@+id/increase_qty"
+                android:layout_width="@dimen/spacing_extra_large"
+                android:layout_height="@dimen/spacing_extra_large"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:background="@drawable/circle_patch"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/white"
+                app:customFont="@string/font.regular" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/part3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/part2"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.demo.craftscc.core.widgets.TextViewPlus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cart.title.item_total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                app:customFont="@string/font.bold" />
+
+            <com.demo.craftscc.core.widgets.TextViewPlus
+                android:id="@+id/item_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_normal"
+                android:gravity="center"
+                android:textColor="@color/black"
+                app:customFont="@string/font.thin"
+                tools:text="24" />
+        </LinearLayout>
+
+        <com.demo.craftscc.core.widgets.TextViewPlus
+            android:id="@+id/clear_item"
+            android:layout_width="@dimen/spacing_extra_large"
+            android:layout_height="@dimen/spacing_extra_large"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:background="@drawable/circle_patch_grey"
+            android:gravity="center"
+            android:text="X"
+            android:textColor="@color/black"
+            app:customFont="@string/font.bold" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

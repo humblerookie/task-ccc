@@ -2,6 +2,9 @@ package com.demo.craftscc.core.utils;
 
 import android.content.Context;
 
+import com.demo.craftscc.checkout.models.Cart;
+import com.demo.craftscc.checkout.utils.CartHelper;
+import com.demo.craftscc.core.CraftsCCApplication;
 import com.demo.craftscc.core.model.Drug;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -20,12 +23,17 @@ public class DataProvider {
 
     private static ArrayList<Drug> items;
     private static ArrayList<ArrayList<Drug>> categorizedItems;
+    private static CartHelper cartHelper;
 
     public ArrayList<Drug> getItems(Context context) {
 
         if (items == null) {
-            items = new Gson().fromJson(Utils.loadJSONFromAsset(context, MOCK_FILE), new TypeToken<ArrayList<Drug>>() {
-            }.getType());
+            synchronized (DataProvider.class) {
+                if (items == null) {
+                    items = new Gson().fromJson(Utils.loadJSONFromAsset(context, MOCK_FILE), new TypeToken<ArrayList<Drug>>() {
+                    }.getType());
+                }
+            }
         }
         return items;
     }
@@ -53,6 +61,18 @@ public class DataProvider {
 
         }
         return categorizedItems;
+    }
+
+    public CartHelper getCartHelper() {
+        if (cartHelper == null) {
+            synchronized (DataProvider.class) {
+                if (cartHelper == null) {
+                    Cart saveCart = PreferenceUtil.getCart(CraftsCCApplication.getInstance());
+                    cartHelper = new CartHelper(saveCart != null ? saveCart : new Cart());
+                }
+            }
+        }
+        return cartHelper;
     }
 
 

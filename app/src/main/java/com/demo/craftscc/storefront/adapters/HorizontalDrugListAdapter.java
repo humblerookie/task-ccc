@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.demo.craftscc.R;
 import com.demo.craftscc.core.model.Drug;
-import com.demo.craftscc.core.utils.DrugItemListener;
+import com.demo.craftscc.core.utils.DrugItemClickListener;
 import com.demo.craftscc.core.utils.GlideUtil;
 import com.demo.craftscc.core.widgets.TextViewPlus;
 
@@ -25,11 +25,11 @@ public class HorizontalDrugListAdapter extends RecyclerView.Adapter<HorizontalDr
 
     private List<Drug> items;
 
-    private WeakReference<DrugItemListener> listenerWeakReference;
+    private WeakReference<DrugItemClickListener> listenerWeakReference;
 
-    public HorizontalDrugListAdapter(List<Drug> items, DrugItemListener drugItemListener) {
+    public HorizontalDrugListAdapter(List<Drug> items, DrugItemClickListener drugItemClickListener) {
         this.items = items;
-        listenerWeakReference = new WeakReference<>(drugItemListener);
+        listenerWeakReference = new WeakReference<>(drugItemClickListener);
     }
 
 
@@ -45,14 +45,14 @@ public class HorizontalDrugListAdapter extends RecyclerView.Adapter<HorizontalDr
 
         Drug item = items.get(position);
         Context context = holder.discount.getContext();
-        holder.price.setText(context.getString(R.string.title_price_placeholder, (item.getPrice() * (1 - item.getDiscount() / 100)) + ""));
+        holder.price.setText(context.getString(R.string.title_price_placeholder, ((int) (item.getPrice() * (1 - item.getDiscount() / 100))) + ""));
         holder.name.setText(item.getName());
         holder.undiscountedPrice.setText(context.getString(R.string.title_price_placeholder, item.getPrice() + ""));
         holder.discount.setText(context.getString(R.string.title_discount_placeholder, item.getDiscount() + ""));
         GlideUtil.loadImage(new GlideUtil.Config()
                 .setActivity((Activity) holder.discount.getContext())
                 .setImageView(holder.icon)
-                .setUrl(item.getIcons().get(0)));
+                .setUrl(item.getImages().get(0)).setPlaceholder(android.R.drawable.gallery_thumb));
         holder.setDrug(item);
 
     }
@@ -80,7 +80,7 @@ public class HorizontalDrugListAdapter extends RecyclerView.Adapter<HorizontalDr
 
         private Drug drug;
 
-        private WeakReference<DrugItemListener> listenerWeakReference;
+        private WeakReference<DrugItemClickListener> listenerWeakReference;
 
 
         public ViewHolder(View itemView) {
@@ -98,7 +98,7 @@ public class HorizontalDrugListAdapter extends RecyclerView.Adapter<HorizontalDr
             this.drug = drug;
         }
 
-        public void setListenerWeakReference(WeakReference<DrugItemListener> listenerWeakReference) {
+        public void setListenerWeakReference(WeakReference<DrugItemClickListener> listenerWeakReference) {
             this.listenerWeakReference = listenerWeakReference;
         }
     }

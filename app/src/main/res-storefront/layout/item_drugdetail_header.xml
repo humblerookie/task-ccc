@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey_20"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:minHeight="@dimen/icon_normal"
+        android:scaleType="centerInside"
+        tools:src="@drawable/circle_patch" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/image_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/filter_options_height"
+        android:layout_marginBottom="@dimen/spacing_tiny"
+        android:clipChildren="false"
+        android:padding="@dimen/spacing_small">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

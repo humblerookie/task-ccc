@@ -1,7 +1,10 @@
 package com.demo.craftscc.core.utils;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
+
+import com.demo.craftscc.R;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,5 +47,12 @@ public class Utils {
             return null;
         }
         return json;
+    }
+
+    public static ProgressDialog createProgressDialog(Context context) {
+        ProgressDialog pd = new ProgressDialog(context, R.style.MyTheme);
+        pd.setCancelable(false);
+        pd.setProgressStyle(android.R.style.Widget_ProgressBar_Small);
+        return pd;
     }
 }

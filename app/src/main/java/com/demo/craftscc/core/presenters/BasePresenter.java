@@ -1,10 +1,19 @@
 package com.demo.craftscc.core.presenters;
 
-/**
- * Created by uday on 22/8/16.
- */
-public interface BasePresenter {
+import com.demo.craftscc.core.views.BaseView;
 
-    void start();
+import java.lang.ref.WeakReference;
+
+public class BasePresenter<T extends BaseView> {
+
+    protected WeakReference<T> view;
+
+    public BasePresenter(T view) {
+        this.view = new WeakReference<T>(view);
+    }
+
+    protected boolean isViewAttached() {
+        return view != null && view.get() != null && view.get().isAlive();
+    }
 
 }

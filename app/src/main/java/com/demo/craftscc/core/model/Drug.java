@@ -3,6 +3,8 @@ package com.demo.craftscc.core.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.demo.craftscc.core.utils.NonObfuscable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,7 @@ import java.util.List;
  * Created by anvith on 10/3/16.
  */
 
-public class Drug implements Parcelable {
+public class Drug implements Parcelable, NonObfuscable {
 
     private int id;
     private String name;
@@ -20,7 +22,7 @@ public class Drug implements Parcelable {
     private int status;
     private String seller;
     private int category;
-    private List<String> icons;
+    private List<String> image;
     private float rating;
     private int reviews;
 
@@ -84,12 +86,12 @@ public class Drug implements Parcelable {
         this.category = category;
     }
 
-    public List<String> getIcons() {
-        return icons;
+    public List<String> getImages() {
+        return image;
     }
 
-    public void setIcons(List<String> icons) {
-        this.icons = icons;
+    public void setImages(List<String> image) {
+        this.image = image;
     }
 
     public float getRating() {
@@ -127,10 +129,10 @@ public class Drug implements Parcelable {
         seller = in.readString();
         category = in.readInt();
         if (in.readByte() == 0x01) {
-            icons = new ArrayList<String>();
-            in.readList(icons, String.class.getClassLoader());
+            image = new ArrayList<String>();
+            in.readList(image, String.class.getClassLoader());
         } else {
-            icons = null;
+            image = null;
         }
         rating = in.readFloat();
         reviews = in.readInt();
@@ -151,11 +153,11 @@ public class Drug implements Parcelable {
         dest.writeInt(status);
         dest.writeString(seller);
         dest.writeInt(category);
-        if (icons == null) {
+        if (image == null) {
             dest.writeByte((byte) (0x00));
         } else {
             dest.writeByte((byte) (0x01));
-            dest.writeList(icons);
+            dest.writeList(image);
         }
         dest.writeFloat(rating);
         dest.writeInt(reviews);
@@ -173,4 +175,8 @@ public class Drug implements Parcelable {
             return new Drug[size];
         }
     };
+
+    public float getDiscountedPrice() {
+        return (int) (getPrice() * (1 - getDiscount() / 100));
+    }
 }

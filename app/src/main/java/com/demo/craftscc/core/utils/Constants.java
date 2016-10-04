@@ -12,4 +12,8 @@ public interface Constants {
 
     int MIN_RATING = 4;
 
+
+    String PLAY_URI_PREFIX = "market://details?id=";
+
+    String APP_URL = "https://play.google.com/store/apps/details?id=";
 }

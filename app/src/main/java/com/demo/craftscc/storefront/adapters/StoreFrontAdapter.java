@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.demo.craftscc.R;
 import com.demo.craftscc.core.model.Drug;
-import com.demo.craftscc.core.utils.DrugItemListener;
+import com.demo.craftscc.core.utils.DrugItemClickListener;
 import com.demo.craftscc.core.widgets.TextViewPlus;
 
 import java.lang.ref.WeakReference;
@@ -23,18 +23,18 @@ public class StoreFrontAdapter extends RecyclerView.Adapter<StoreFrontAdapter.Vi
     private List<String> items;
     private ArrayList<ArrayList<Drug>> drugs;
 
-    private WeakReference<DrugItemListener> listenerWeakReference;
+    private WeakReference<DrugItemClickListener> listenerWeakReference;
 
-    public StoreFrontAdapter(List<String> items, ArrayList<ArrayList<Drug>> drugs, DrugItemListener drugItemListener) {
+    public StoreFrontAdapter(List<String> items, ArrayList<ArrayList<Drug>> drugs, DrugItemClickListener drugItemClickListener) {
         this.items = items;
-        listenerWeakReference = new WeakReference<>(drugItemListener);
+        listenerWeakReference = new WeakReference<>(drugItemClickListener);
         this.drugs = drugs;
     }
 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ViewHolder holder = new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_horizontal, parent, false));
+        ViewHolder holder = new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_storefront_horizontal, parent, false));
         holder.setAdapter(new HorizontalDrugListAdapter(new ArrayList<Drug>(), listenerWeakReference.get()));
         return holder;
     }
@@ -50,12 +50,18 @@ public class StoreFrontAdapter extends RecyclerView.Adapter<StoreFrontAdapter.Vi
         return items.size();
     }
 
+    public void resetData(List<String> items, ArrayList<ArrayList<Drug>> drugs) {
+        this.items = items;
+        this.drugs = drugs;
+        notifyDataSetChanged();
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.title)
+        @BindView(R.id.category_label)
         TextViewPlus title;
 
-        @BindView(R.id.list)
+        @BindView(R.id.category_list)
         RecyclerView recyclerView;
 
         private HorizontalDrugListAdapter adapter;

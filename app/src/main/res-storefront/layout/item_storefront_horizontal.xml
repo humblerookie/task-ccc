@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/spacing_normal"
+    android:paddingTop="@dimen/spacing_normal">
 
     <com.demo.craftscc.core.widgets.TextViewPlus
         android:id="@+id/category_label"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/font_normal"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_large"
         app:customFont="@string/font.regular" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="@dimen/spacing_normal"
-        android:layout_marginTop="@dimen/spacing_normal"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:layout_marginTop="@dimen/spacing_small"
         android:background="@color/black_20" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/category_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_normal"></android.support.v7.widget.RecyclerView>
+        android:layout_marginTop="@dimen/spacing_normal"
+        android:background="@color/grey_20"
+        android:clipToPadding="false">
+
+    </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

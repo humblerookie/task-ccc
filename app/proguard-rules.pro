@@ -15,3 +15,15 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+-dontwarn icepick.**
+-keep class icepick.** { *; }
+-keep class **$$Icepick { *; }
+-keepclasseswithmembernames class * {
+    @icepick.* <fields>;
+}
+-keepnames class * { @icepick.State *;}
+-keep public class * extends com.demo.craftscc.core.utils.NonObfuscable
+-keepclassmembers class * extends  com.demo.craftscc.core.utils.NonObfuscable{*;}
+-keep class **$$Icepick { *; }

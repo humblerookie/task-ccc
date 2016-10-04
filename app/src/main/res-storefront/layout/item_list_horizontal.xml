@@ -1,70 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="200dp"
-    android:id="@+id/container"
+    android:id="@+id/card_view"
+    android:layout_width="150dp"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginBottom="@dimen/spacing_normal"
     android:layout_marginRight="@dimen/spacing_small"
-    android:orientation="vertical"
-    android:padding="@dimen/spacing_small"
-    tools:background="@color/white">
+    app:cardCornerRadius="@dimen/spacing_tiny_extreme">
 
-    <ImageView
-        android:id="@+id/image"
+    <RelativeLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerInside"
-        tools:layout_height="150dp" />
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_small">
 
-    <com.demo.craftscc.core.widgets.TextViewPlus
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image"
-        android:layout_marginBottom="@dimen/spacing_small"
-        android:layout_marginRight="@dimen/spacing_normal"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_normal"
-        app:customFont="@string/font.regular"
-        tools:text="Amphatemine" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerInside" />
 
-    <com.demo.craftscc.core.widgets.TextViewPlus
-        android:id="@+id/undiscounted_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/name"
-        android:layout_marginRight="@dimen/spacing_normal"
-        android:background="@drawable/strike"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_small"
-        app:customFont="@string/font.thin"
-        tools:text="Rs. 1900" />
+        <com.demo.craftscc.core.widgets.TextViewPlus
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_marginBottom="@dimen/spacing_small"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"
+            app:customFont="@string/font.regular"
+            tools:text="Amphatemine" />
 
-    <com.demo.craftscc.core.widgets.TextViewPlus
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/name"
-        android:layout_toRightOf="@+id/undiscounted_price"
-        android:gravity="right"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_small"
-        app:customFont="@string/font.bold"
-        tools:text="Rs. 1500" />
+        <com.demo.craftscc.core.widgets.TextViewPlus
+            android:id="@+id/undiscounted_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:background="@drawable/strike"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_small"
+            app:customFont="@string/font.thin"
+            tools:text="Rs. 1900" />
 
-    <com.demo.craftscc.core.widgets.TextViewPlus
-        android:id="@+id/discount"
-        android:layout_width="@dimen/icon_small"
-        android:layout_height="@dimen/icon_small"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/circle_patch"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_super_tiny"
-        tools:text="25%" />
+        <com.demo.craftscc.core.widgets.TextViewPlus
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/name"
+            android:layout_toRightOf="@+id/undiscounted_price"
+            android:gravity="right"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_small"
+            app:customFont="@string/font.bold"
+            tools:text="Rs. 1500" />
 
-</RelativeLayout>
+        <com.demo.craftscc.core.widgets.TextViewPlus
+            android:id="@+id/discount"
+            android:layout_width="@dimen/icon_small"
+            android:layout_height="@dimen/icon_small"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/circle_patch"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_tiny"
+            tools:text="25%" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.demo.craftscc">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".core.CraftsCCApplication"
         android:allowBackup="true"
@@ -18,9 +22,18 @@
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".storefront.activities.DrugDetailsActivity"
+            android:label="@string/title_activity_drug_details"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".storefront.activities.DrugListActivity" />
+        <activity android:name=".checkout.activities.CartActivity" />
+        <activity android:name=".storefront.activities.SearchActivity" />
+        <activity android:name=".checkout.activities.AddressActivity"></activity>
     </application>
 
 </manifest>

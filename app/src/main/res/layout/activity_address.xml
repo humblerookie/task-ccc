@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.demo.craftscc.checkout.activities.AddressActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <com.demo.craftscc.core.widgets.TextViewPlus
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_normal"
+        android:text="@string/cart.title.please_fill"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_normal"
+        app:customFont="@string/font.bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:padding="@dimen/spacing_normal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.demo.craftscc.checkout.activities.AddressActivity">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                android:inputType="text"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black_40"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/font_normal"
+                app:met_accentTypeface="@string/font.thin"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/grey_20"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_typeface="@string/font.regular" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:gravity="top"
+                android:hint="Enter Address"
+                android:text=""
+                android:textColor="@color/black_40"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/font_small"
+                app:met_accentTypeface="@string/font.thin"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/grey_20"
+                app:met_maxCharacters="300"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_singleLineEllipsis="true"
+                app:met_typeface="@string/font.regular" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/postal_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:hint="Enter Postal code"
+                android:inputType="number"
+                android:maxLength="6"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black_40"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/font_normal"
+                app:met_accentTypeface="@string/font.thin"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelTextColor="@color/grey_20"
+                app:met_maxCharacters="6"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_typeface="@string/font.regular" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:hint="Enter email"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black_40"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/font_normal"
+                app:met_accentTypeface="@string/font.thin"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_floatingLabel="highlight"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_typeface="@string/font.regular" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:hint="Enter mobile number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/black_40"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/font_normal"
+                app:met_accentTypeface="@string/font.thin"
+                app:met_baseColor="@color/colorPrimary"
+                app:met_floatingLabel="highlight"
+                app:met_maxCharacters="10"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_typeface="@string/font.regular" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.demo.craftscc.core.widgets.TextViewPlus
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/material_green"
+        android:elevation="@dimen/spacing_small"
+        android:gravity="center"
+        android:padding="@dimen/spacing_normal"
+        android:text="@string/cart.action.confirm_order"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        app:customFont="@string/font.regular" />
+</LinearLayout>
