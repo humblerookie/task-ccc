@@ -12,6 +12,7 @@ import com.demo.craftscc.core.utils.PreferenceUtil;
 import com.demo.craftscc.core.utils.email.GMailSender;
 
 import java.lang.ref.WeakReference;
+import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -122,8 +123,8 @@ public class AddressPresenter extends BasePresenter<AddressView> {
 
             try {
                 GMailSender sender = new GMailSender(BuildConfig.USERNAME, BuildConfig.PASSWORD);
-                sender.sendMail("Order Confirmation",
-                        "Your order was confirmed and would be delivered to you within 5 working days",
+                sender.sendMail("Order Confirmation via Online Drugstore",
+                        "Your Order No." + Calendar.getInstance().getTimeInMillis() + " was confirmed and would be delivered to you within 5 working days",
                         "asterrisk3@gmail.com",
                         PreferenceUtil.getUserEmail(CraftsCCApplication.getInstance()));
             } catch (Exception e) {
