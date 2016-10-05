@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.demo.craftscc.R;
 import com.demo.craftscc.checkout.presenters.AddressPresenter;
@@ -79,6 +80,15 @@ public class AddressActivity extends BaseActivity implements AddressView {
     public void onErrorAddress() {
         address.requestFocus();
         alertCustom(R.string.error_cart_form_address);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

@@ -19,7 +19,6 @@
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,10 +26,18 @@
             android:name=".storefront.activities.DrugDetailsActivity"
             android:label="@string/title_activity_drug_details"
             android:theme="@style/AppTheme" />
-        <activity android:name=".storefront.activities.DrugListActivity" />
-        <activity android:name=".checkout.activities.CartActivity" />
-        <activity android:name=".storefront.activities.SearchActivity" />
-        <activity android:name=".checkout.activities.AddressActivity"></activity>
+        <activity
+            android:name=".storefront.activities.DrugListActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".checkout.activities.CartActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".storefront.activities.SearchActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".checkout.activities.AddressActivity"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
