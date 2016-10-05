@@ -54,11 +54,19 @@ public class CartPresenter extends BasePresenter<CartView> {
     }
 
     public void incrementItem(int pos, int id) {
-        cartHelper.incrementQuantityInCart(cartItems.get(id).getDrug());
         if (isViewAttached()) {
-            view.get().notifyItemChanged(pos);
-            view.get().notifyItemChanged(cartItems.size());
+            if (cartHelper.hasReachedMaxQuantity(cartItems.get(id).getDrug())) {
+                view.get().notifyMaxQuantityReached();
+            } else if (cartHelper.hasExceededMaxCartValues(cartItems.get(id).getDrug())) {
+                view.get().notifyCartValueReached();
+            } else {
+                cartHelper.incrementQuantityInCart(cartItems.get(id).getDrug());
+
+                view.get().notifyItemChanged(pos);
+                view.get().notifyItemChanged(cartItems.size());
+            }
         }
+
     }
 
     public void removeItem(int pos, int id) {

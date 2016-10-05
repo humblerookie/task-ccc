@@ -96,5 +96,8 @@
     <string name="storefront.extra.subject">An awesome app.</string>
     <string name="storefront.body.prefix">"Guys check out this cool app to order medicines online via "</string>
     <string name="storefron.search.no_results">No results.</string>
+    <string name="error.cart.max_quantity">Sorry, You can order a maximum of 10 quantity per item</string>
+    <string name="error.cart_max_value">Sorry, We only ship orders upto ₹ 10000.</string>
+    <string name="error.cart.max_items">Sorry, You can add upto 10 different items in your cart.</string>
 
 </resources>

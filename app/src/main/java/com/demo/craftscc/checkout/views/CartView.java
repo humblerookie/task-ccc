@@ -21,4 +21,8 @@ public interface CartView extends BaseView<CartPresenter> {
     void notifyItemRemoved(int pos);
 
     void navigateToAddressView();
+
+    void notifyMaxQuantityReached();
+
+    void notifyCartValueReached();
 }

@@ -150,4 +150,15 @@ public class CartActivity extends BaseActivity implements CartView, CartAdapter.
 
         getPresenter().onClickProceed();
     }
+
+    @Override
+    public void notifyMaxQuantityReached() {
+        alertCustom(R.string.error_cart_max_quantity);
+    }
+
+    @Override
+    public void notifyCartValueReached() {
+        alertCustom(R.string.error_cart_max_value);
+    }
+
 }

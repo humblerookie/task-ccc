@@ -29,8 +29,16 @@ public class DrugDetailsPresenter extends BasePresenter<DrugDetailsView> {
 
 
     public void onAddedToCart() {
-        cartHelper.incrementQuantityInCart(drug);
-        drugDetailsViewWeakReference.get().notifyItemAdded();
+        if (cartHelper.hasReachedMaxItems()) {
+            view.get().notifyMaxItemsReached();
+        } else if (cartHelper.hasReachedMaxQuantity(drug)) {
+            view.get().notifyMaxQuantityReached();
+        } else if (cartHelper.hasExceededMaxCartValues(drug)) {
+            view.get().notifyCartValueReached();
+        } else {
+            cartHelper.incrementQuantityInCart(drug);
+            drugDetailsViewWeakReference.get().notifyItemAdded();
+        }
     }
 
     public void onClickedGoToCart() {

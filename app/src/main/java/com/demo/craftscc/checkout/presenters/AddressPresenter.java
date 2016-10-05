@@ -63,7 +63,7 @@ public class AddressPresenter extends BasePresenter<AddressView> {
             return;
         }
 
-        if (phoneNumber.trim().length() != 10) {
+        if (phoneNumber.trim().length() != 10 || !isValidContact(phoneNumber)) {
             if (isViewAttached()) {
                 view.get().onErrorPhone();
             }
@@ -72,6 +72,20 @@ public class AddressPresenter extends BasePresenter<AddressView> {
 
         PreferenceUtil.setEmail(CraftsCCApplication.getInstance(), email);
         new SendEmail(this).execute();
+
+    }
+
+    private boolean isValidContact(String contact) {
+        try {
+            long l = Long.parseLong(contact.trim());
+            if (l >= 6000000000l) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
 
     }
 
@@ -85,8 +99,12 @@ public class AddressPresenter extends BasePresenter<AddressView> {
 
     private boolean isValidPostal(String postal) {
         try {
-            long l = Long.parseLong(postal);
-            return true;
+            long l = Long.parseLong(postal.trim());
+            if (l != 0) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (Exception e) {
             return false;
         }

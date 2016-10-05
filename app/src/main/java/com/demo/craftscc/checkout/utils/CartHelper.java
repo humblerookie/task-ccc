@@ -14,6 +14,10 @@ import java.util.Iterator;
 
 public class CartHelper {
 
+    public static final int MAX_QUANTITY = 10;
+    public static final int MAX_ITEMS = 10;
+    public static final float MAX_CART_VALUE = 10000;
+
     private Cart cart;
 
     public Cart getCart() {
@@ -35,6 +39,23 @@ public class CartHelper {
             cart.getCartItems().put(drug.getId(), cartItem);
         }
         PreferenceUtil.setCart(CraftsCCApplication.getInstance(), cart);
+    }
+
+    public boolean hasReachedMaxQuantity(Drug drug) {
+        if (cart.getCartItems().containsKey(drug.getId())) {
+            CartItem cartItem = cart.getCartItems().get(drug.getId());
+            return cartItem.getQuantity() == MAX_QUANTITY;
+        }
+
+        return false;
+    }
+
+    public boolean hasReachedMaxItems() {
+        return cart.getCartItems().size() == MAX_ITEMS;
+    }
+
+    public boolean hasExceededMaxCartValues(Drug drug) {
+        return getCartTotalValue() + drug.getDiscountedPrice() > MAX_CART_VALUE;
     }
 
     public void removeItemFromCart(Drug drug) {

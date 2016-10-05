@@ -116,6 +116,21 @@ public class DrugDetailsActivity extends BaseActivity implements DrugDetailsView
         startActivity(intent);
     }
 
+    @Override
+    public void notifyMaxQuantityReached() {
+        alertCustom(R.string.error_cart_max_quantity);
+    }
+
+    @Override
+    public void notifyMaxItemsReached() {
+        alertCustom(R.string.error_cart_max_items);
+    }
+
+    @Override
+    public void notifyCartValueReached() {
+        alertCustom(R.string.error_cart_max_value);
+    }
+
 
     @Override
     public void showData(Drug drug) {

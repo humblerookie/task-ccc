@@ -19,4 +19,10 @@ public interface DrugDetailsView extends BaseView<DrugDetailsPresenter> {
     void navigateToSearchActivity();
 
     void navigateToCartActivity();
+
+    void notifyMaxQuantityReached();
+
+    void notifyMaxItemsReached();
+
+    void notifyCartValueReached();
 }
